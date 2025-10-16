@@ -13,5 +13,11 @@ router.post(
   [authMiddleware.verifyToken, authMiddleware.isAdmin],
   employeeController.createEmployee
 );
+// create a route to handle get request to get all employees
+router.get(
+  "/api/employees",
+  [authMiddleware.verifyToken, authMiddleware.isAdmin],
+  employeeController.getAllEmployees
+);
 // export the router
 module.exports = router;

@@ -1,7 +1,7 @@
 // Import React, the useState and useEffect hooks
 import React, { useState, useEffect } from "react";
 // Import the Route and Navigate components
-import { Navigate } from "react-router";
+import { Navigate } from "react-router-dom";
 // Import the Util function we created to handle the reading from the local storage
 import getAuth from "../../../util/auth";
 
@@ -33,6 +33,11 @@ const PrivateAuthRoute = ({ roles, children }) => {
       setIsChecked(true);
     });
   }, [roles]);
+  // If the user is not logged in, redirect to login page
+  // If the user is logged in but not authorized, redirect to unauthorized page
+  // If the user is logged in and authorized, render the children components (the protected route)
+  // Only do the above checks after we have checked the local storage
+  // to avoid flickering effect
   if (isChecked) {
     if (!isLogged) {
       return <Navigate to="/login" />;

@@ -85,7 +85,7 @@ function Header() {
                             <a href="/AddEmployee">Add Employee</a>
                           </li>
                           <li>
-                            <a href="/EmployeeList">Employee List</a>
+                            <a href="/api/employees">Employee List</a>
                           </li>
                         </ul>
                       </div>

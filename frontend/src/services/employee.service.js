@@ -21,8 +21,28 @@ const createEmployee = async (formData, loggedInEmployeeToken) => {
   return response;
 };
 
+// after the clone is done, run the following command to to fetch the api data
+// A function to send get request to get all employees from backend to display in the table on the Employees page of frontend
+const getAllEmployees = async (token) => {
+  // console.log(token);
+  const requestOptions = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      "x-access-token": token,
+    },
+  };
+  // api/employees
+  const response = await fetch(
+    "http://localhost:5000/api/employees",
+    // `${apiUrl}/api/employees`,
+    requestOptions
+  );
+  return response;
+};
 const employeeService = {
   createEmployee,
+  getAllEmployees,
 };
 
 export default employeeService;

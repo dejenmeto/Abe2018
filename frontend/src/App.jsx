@@ -9,7 +9,7 @@ import UnAuthorized from "./markup/pages/UnAuthorized";
 import Login from "./markup/pages/Login";
 // import customers, employees, and orders pages
 import Customers from "./markup/pages/Admin/Customers";
-// import Employees from "./markup/pages/Admin/Employees";
+import Employees from "./markup/pages/Admin/Employees";
 import Orders from "./markup/pages/Admin/Orders";
 // import Contact from "./markup/pages/Contact";
 // import private route
@@ -48,7 +48,7 @@ function App() {
           }
         />
         {/* <Route path="/orders" element={<Orders />} /> */}
-        {/* add employees page */}
+
         {/* <Route path="/AddEmployee" element={<AddEmployee />} /> */}
 
         <Route
@@ -62,11 +62,22 @@ function App() {
         <Route
           path="/AddEmployee"
           element={
-            <PrivateAuthRoute roles={[1, 2, 3]}>
+            <PrivateAuthRoute roles={[1, 2]}>
               <AddEmployee />
             </PrivateAuthRoute>
           }
         />
+
+        <Route
+          path="/api/employees"
+          element={
+            <PrivateAuthRoute roles={[1, 2, 3]}>
+              <Employees />
+            </PrivateAuthRoute>
+          }
+          // element={<Employees />}
+        />
+        {/* <Route path="/employees" element={<Employees />} /> */}
       </Routes>
       <Footer />
     </>

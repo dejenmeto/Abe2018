@@ -14,7 +14,7 @@ const createEmployee = async (formData, loggedInEmployeeToken) => {
   //   const response = await fetch(`${api_url}/api/employee`, requestOptions);
 
   const response = await fetch(
-    `http://localhost:5000/api/employee`,
+    `https://abe2018.onrender.com/api/employee`,
     requestOptions
   );
 
@@ -34,7 +34,7 @@ const getAllEmployees = async (token) => {
   };
   // api/employees
   const response = await fetch(
-    "http://localhost:5000/api/employees",
+    "https://abe2018.onrender.com/api/employees",
     // `${apiUrl}/api/employees`,
     requestOptions
   );

@@ -59,14 +59,14 @@ function App() {
             </PrivateAuthRoute>
           }
         />
-        <Route
+        {/* <Route
           path="/AddEmployee"
           element={
             <PrivateAuthRoute roles={[1, 2]}>
               <AddEmployee />
             </PrivateAuthRoute>
           }
-        />
+        /> */}
 
         <Route
           path="/api/employees"
@@ -77,7 +77,7 @@ function App() {
           }
           // element={<Employees />}
         />
-         <Route path="/employees" element={<Employees />} /> 
+         <Route path="/AddEmployee" element={<Employees />} /> 
       </Routes>
       <Footer />
     </>
